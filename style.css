@@ -1,0 +1,272 @@
+@import url(https://fonts.googleapis.com/css?family=Asap+Condensed|Philosopher|Baloo+2);
+
+body {
+    background-image: url(./assets/home/background-home-desktop.jpg);
+    background-size: cover;
+}
+.numbered {
+    color: white;
+    font-weight: bold;
+}
+a.nav-link {
+    white-space: pre;
+    font-family: "Asap Condensed";
+}
+.nav-link {
+    margin-right: 10px;
+}
+div#links {
+    margin-right: 80px;
+    padding: 20px 0 20px 0;
+}
+button {
+    position: absolute;
+    right: 15px;
+}
+
+/*sticky navbar -- this class is added when the navbar reaches the top*/
+.navbar.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 1);
+}
+/*
+Add some top padding to the page content to prevent sudden quick movement
+(as the navigation bar gets a new position at the top of the page (position:fixed and top:0)
+*/
+.navbar.sticky + .container {
+    padding-top: 50px;
+}
+
+/*line below links*/
+a.custom-nav-link {
+    position: relative;
+}
+a.custom-nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -28px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: whitesmoke;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+a.custom-nav-link:hover::after {
+    opacity: 1;
+}
+
+/*right half transparent*/
+.navbar {
+    background-color: transparent;
+    position: relative;
+}
+.navbar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 57%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+}
+
+/*Responsiveness*/
+@media screen and (max-width:1200px) {
+    body {
+        background-image: url(./assets/home/background-home-tablet.jpg);
+    }
+}
+@media screen and (max-width:950px) {
+    .navbar::after {
+        width: 76%;
+    }
+    .mainText,.mainXplo {
+        display: block;
+    }
+    .mainText {
+        margin: 30px;
+    }
+    .mainXplo {
+        margin: 30px;
+    }
+    
+}
+@media screen and (max-width:785px) {
+    body {
+        background-image: url(./assets/home/background-home-tablet.jpg);
+    }
+}
+@media screen and (max-width:570px) {
+    .navbar::after {
+        width: 100%;
+    }
+    div#links {
+        right: 0;
+    }
+    a.custom-nav-link::after {
+        bottom: -1px;
+    }
+    body {
+        background-image: url(./assets/home/background-home-mobile.jpg);
+    }
+    .destImages {
+        display: flex;
+        flex-direction: column;
+     }
+     .mainText,.mainXplo {
+        display: block;
+        box-sizing: border-box;
+     }
+     p.main {
+        font-size: 15px;
+     }
+     p.space {
+        font-size: 50px;
+        line-height: 30px;
+    }
+    .mainXplo {
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mainText {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+}
+
+/*Content*/
+.mainText,.mainXplo {
+    display: inline-block;
+}
+.mainText {
+    max-width: 350px;
+}
+.mainXplo {
+    /*align p element at center*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*dimensions of div*/
+    width: 200px;
+    height: 200px;
+    /*styling to make visible*/
+    background-color: whitesmoke;
+    padding: 30px;
+    border-radius: 50%;
+    float: right;
+    margin: 85px;
+    
+}
+p {
+    color: whitesmoke;
+}
+p.main {
+    font-family: "Asap Condensed";
+    font-size: 20px;
+    word-spacing: 5px;
+}
+p.xplo, p.space {
+    font-family: "Philosopher";
+}
+p.space {
+    font-size: 110px;
+    line-height: 120px;
+}
+p.content {
+    font-family: "Baloo 2";
+}
+p.xplo {
+    color: darkslategrey;
+    text-align: center;
+    font-size: 30px;
+}
+
+/*Lower container*/
+.container {
+    margin-top: 50px;
+    box-sizing: border-box;
+}
+
+.cc {
+    margin-top: 110px;
+}
+
+/*Images*/
+a img {
+    width: 100%;
+    margin: 10px;
+}
+
+div.title {
+    text-align: center;
+    margin: 30px;
+    font-family: "Asap Condensed";
+    color: whitesmoke;
+    font-size: 40px;
+}
+div.mainContainer {
+    max-width: 250px;
+    display: inline-block;
+    margin: 10px;
+}
+div.imageContainer {
+    max-width: inherit;
+}
+div.textContainer {
+    text-align: center;
+    margin: 15px;
+    font-family: "Philosopher";
+    color: whitesmoke;
+    font-size: 25px;
+}
+ /*dest links*/
+ .pickDest {
+    color: whitesmoke;
+    font-family: "Asap Condensed";
+    font-size: 20px;
+    word-spacing: 5px;
+ }
+ .pickDest a {
+    text-decoration: none;
+ }
+
+ .chosen {
+    width: 100%;
+    margin-top: 20px;
+
+ }
+ .chosenDest {
+    max-width: 350px;
+    margin: 20px;
+    padding: 20px;
+ }
+ .chosenDest img {
+    width: 100%;
+ }
+ .chosenDestDesc  {
+    max-width: 550px;
+    height: 350px;
+    padding-left: 40px;
+ }
+
+ 
+
+ .destImages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .chosenDestDesc h2 {
+    font-family: "Philosopher";
+    color: whitesmoke;
+ }
+ .chosenDestDesc, .chosenDest {
+    display: inline-block;
+ }
